@@ -1,9 +1,8 @@
-#Build A Small SkyDNS Docker Image
-#Minimum docker image for influxdb
+####Minimum docker image for influxdb
 
 * See [Create The Smallest Possible Docker Container](http://blog.xebia.com/2014/07/04/create-the-smallest-possible-docker-container/)
 
-###Build image:
+####Build image:
 
 	./build.sh
 
