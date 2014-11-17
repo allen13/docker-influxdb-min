@@ -5,6 +5,17 @@ CONFIG_FILE="/etc/influxdb/config.toml"
 #Dynamically change the value of 'max-open-shards' to what 'ulimit -n' returns
 sed -i "s/^max-open-shards.*/max-open-shards = $(ulimit -n)/g" ${CONFIG_FILE}
 
+#Configure InfluxDB Cluster
+if [ -n "${HOSTNAME}" ]; then
+	if [ "${HOSTNAME}" == "auto" ]; then
+		#set hostname with IPv4 eth0
+		HOSTIPNAME=$(ip a show dev eth0 | grep inet | grep eth0 | sed -e 's/^.*inet.//g' -e 's/\/.*$//g')
+		sed -i "s/^# hostname.*$/hostname = \"${HOSTIPNAME}\"/g" ${CONFIG_FILE}
+	else
+		sed -i "s/^# hostname.*$/hostname = \"${HOSTNAME}\"/g" ${CONFIG_FILE}
+	fi
+fi
+
 if [ -n "${SEEDS}" ]; then
   sed -i "s/^# seed-servers.*$/seed-servers = [${SEEDS}]/g" ${CONFIG_FILE}
 fi
