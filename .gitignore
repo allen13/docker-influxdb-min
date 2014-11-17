@@ -1,6 +1,1 @@
-.vagrant/
-log/
-user-data
-config.rb
-*.orig
-docker-registry.db
+.idea
