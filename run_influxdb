@@ -1,0 +1,18 @@
+#!/bin/ash
+
+CONFIG_FILE="/etc/influxdb/config.toml"
+
+#Dynamically change the value of 'max-open-shards' to what 'ulimit -n' returns
+sed -i "s/^max-open-shards.*/max-open-shards = $(ulimit -n)/g" ${CONFIG_FILE}
+
+if [ -n "${SEEDS}" ]; then
+  sed -i "s/^# seed-servers.*$/seed-servers = [${SEEDS}]/g" ${CONFIG_FILE}
+fi
+
+if [ -n "${REPLICATION_FACTOR}" ]; then
+	sed -i "s/replication-factor = 1/replication-factor = ${REPLICATION_FACTOR}/g" ${CONFIG_FILE}
+fi
+
+echo "=> Starting InfluxDB ..."
+
+exec /usr/bin/influxdb -config=/etc/influxdb/config.toml
