@@ -6,12 +6,12 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN echo 'deb http://http.debian.net/debian wheezy-backports main' >> /etc/apt/sources.list \
     && apt-get update \
     && apt-get install -y -t wheezy-backports linux-image-amd64 \
-       mercurial bzr protobuf-compiler flex bison \
-       valgrind g++ make autoconf libtool libz-dev libbz2-dev curl \
-       rpm build-essential git wget \
+       mercurial bzr protobuf-compiler flex bison libgflags-dev libsnappy-dev\
+       valgrind g++ make autoconf libtool libz-dev libbz2-dev zlib1g-dev curl \
+       rpm build-essential git wget gawk \
     && curl -sSL https://get.docker.io/ | sh
 
-#Checkout InfluxDB version 0.8.6
+#checkout InfluxDB version 0.8.6
 RUN mkdir -p $GOPATH/src/github.com/influxdb && \
  cd $GOPATH/src/github.com/influxdb && \
  git clone https://github.com/influxdb/influxdb.git && \
@@ -19,9 +19,9 @@ RUN mkdir -p $GOPATH/src/github.com/influxdb && \
 
 WORKDIR $GOPATH/src/github.com/influxdb/influxdb
 
-#Configure and build binary as a static binary
+#configure and build binary as a static binary
+ENV GO_BUILD_OPTIONS --ldflags '-s -extldflags "-static"'
 RUN ./configure
-RUN echo "GO_BUILD_OPTIONS=--ldflags '-s -extldflags \"-static\"'" | cat - Makefile > /tmp/out && mv /tmp/out Makefile
 RUN make build_binary
 
 ADD config.toml $GOPATH/src/github.com/influxdb/influxdb/config.toml
