@@ -2,6 +2,7 @@
 * Total size: 18.02 MB
 
 * See [Create The Smallest Possible Docker Container](http://blog.xebia.com/2014/07/04/create-the-smallest-possible-docker-container/)
+* Influxdb docker image referenced from: [tutum-docker-influxdb](https://github.com/tutumcloud/tutum-docker-influxdb)
 
 ####Build image:
 
