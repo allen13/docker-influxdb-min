@@ -1,5 +1,5 @@
-####Minimum docker image for influxdb
-* Total size: 14.14 MB
+####Minimum docker image from busybox for influxdb
+* Total size: 16.57 MB
 
 * See [Create The Smallest Possible Docker Container](http://blog.xebia.com/2014/07/04/create-the-smallest-possible-docker-container/)
 
@@ -13,8 +13,14 @@ You should see some outputs similar to:
 
     ...
     Successfully built c2a85185ca6f
-    REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
-    influxdb-min        latest              a83b0d6b0a88        1 seconds ago       14.14 MB
-    influxdb-build      latest              2544322de668        3 seconds ago       1.328 GB
+    REPOSITORY             TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+    influxdb-min           latest              013634f3287e        12 minutes ago      16.57 MB
+    influxdb-build         latest              82d203d906f7        12 minutes ago      1.328 GB
 
-From here you can push or use the influxdb-min image.
+
+####Runtime environment variables
+Currently supports setting seed-servers and replication-factor.
+
+	docker run -e SEEDS="\"master:8090\"" -e REPLICATION_FACTOR="2" influxdb-min /bin/ash
+	
+Add more substitutions to run_influxdb as needed.
