@@ -18,7 +18,7 @@ You should see some outputs similar to:
     influxdb-build         latest              82d203d906f7        12 minutes ago      1.328 GB
 
 
-####Runtime environment variables
+####Runtime configuration templating through environment variables
 Currently supports setting seed-servers and replication-factor.
 
 	docker run -e SEEDS="\"master:8090\"" -e REPLICATION_FACTOR="2" influxdb-min /bin/ash
