@@ -1,6 +1,4 @@
 ####Minimum docker image from busybox for influxdb
-* Still need to add statik content
-* Currently does not support rocksdb storage engine (need to add it to the build)
 * Total size: 16.57 MB
 
 * See [Create The Smallest Possible Docker Container](http://blog.xebia.com/2014/07/04/create-the-smallest-possible-docker-container/)
