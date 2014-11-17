@@ -17,4 +17,4 @@ You should see some outputs similar to:
     influxdb-min        latest              a83b0d6b0a88        1 seconds ago       14.14 MB
     influxdb-build      latest              2544322de668        3 seconds ago       1.328 GB
 
-From here you can do what you want form your minimal image.
+From here you can push or use the influxdb-min image.
