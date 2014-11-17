@@ -1,5 +1,5 @@
 ####Minimum docker image from busybox for influxdb
-* Total size: 16.57 MB
+* Total size: 18.02 MB
 
 * See [Create The Smallest Possible Docker Container](http://blog.xebia.com/2014/07/04/create-the-smallest-possible-docker-container/)
 
@@ -14,8 +14,9 @@ You should see some outputs similar to:
     ...
     Successfully built c2a85185ca6f
     REPOSITORY             TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
-    influxdb-min           latest              013634f3287e        12 minutes ago      16.57 MB
-    influxdb-build         latest              82d203d906f7        12 minutes ago      1.328 GB
+    influxdb-min           latest              c0f1eba0f177        7 minutes ago       18.02 MB
+    influxdb-build         latest              65fe5c5e641b        7 minutes ago       1.526 GB
+
 
 
 ####Runtime configuration templating through environment variables
