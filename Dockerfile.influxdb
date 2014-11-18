@@ -6,6 +6,4 @@ ADD config.toml /etc/influxdb/config.toml
 
 EXPOSE 8083 8086 8090 8099
 
-VOLUME /data/influxdb/
-
 CMD ["/usr/bin/run_influxdb"]
