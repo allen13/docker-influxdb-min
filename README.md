@@ -1,3 +1,5 @@
+####DockerHub repo
+	docker pull allen13/influxdb-min
 ####Minimum docker image from busybox for influxdb
 * Total size: 18.02 MB
 
