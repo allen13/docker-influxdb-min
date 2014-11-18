@@ -22,9 +22,9 @@ You should see some outputs similar to:
 Currently supported variables:
 
 	docker run -d \
-	-e SEEDS="\"master:8090\"" \
+	-e SEED="master:8090" \
 	-e REPLICATION_FACTOR="2" \
-	-e HOSTNAME="auto" \
+	-e HOSTNAME="localhost" \
 	influxdb-min
 	
 Add more substitutions to run_influxdb as needed.
