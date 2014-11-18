@@ -14,3 +14,6 @@ shell:
 	docker run --rm  $(PORT_MAPPINGS) -t -i influxdb-min /bin/ash
 test:
 	go test ./integration
+release:
+	docker tag influxdb-min allen13/influxdb-min
+	docker push allen13/influxdb-min

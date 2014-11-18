@@ -16,8 +16,8 @@ if [ -n "${HOSTNAME}" ]; then
 	fi
 fi
 
-if [ -n "${SEEDS}" ]; then
-  sed -i "s/^# seed-servers.*$/seed-servers = [${SEEDS}]/g" ${CONFIG_FILE}
+if [ -n "${SEED}" ]; then
+  sed -i "s/^# seed-servers.*$/seed-servers = [\"${SEED}\"]/g" ${CONFIG_FILE}
 fi
 
 if [ -n "${REPLICATION_FACTOR}" ]; then
