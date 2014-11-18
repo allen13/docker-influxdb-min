@@ -1,0 +1,42 @@
+[
+  {
+    "name": "instance_metrics",
+    "columns": [
+      "trackingObjectId",
+      "cpu0",
+      "cpu1",
+      "cpu2",
+      "cpu3",
+      "cpu4",
+      "cpu5",
+      "cpu6",
+      "cpu7",
+      "cpu8",
+      "cpu9",
+      "cpu10",
+      "cpu11",
+      "cpu12",
+      "cpu13",
+      "cpu14",
+      "cpu15",
+      "vbd_xvdb_write",
+      "vbd_xvdb_read",
+      "vbd_xvda_write",
+      "vbd_xvda_read",
+      "vbd_xvdc_write",
+      "vbd_xvdc_read",
+      "vbd_xvdd_write",
+      "vbd_xvdd_read",
+      "memory",
+      "public_in",
+      "public_out",
+      "private_in",
+      "private_out",
+      "memory_internal_free",
+      "memory_usage"
+    ],
+    "points": [
+      [ 1, 87.280266, 19.74551, 17.898554, 41.58789, 49.124672, 14.738017, 6.2651515, 84.44474, 72.30867, 64.2923, 46.528107, 33.20553, 80.86744, 82.33386, 75.422905, 42.261715, 95656032, 297410498, 906254121, 686616193, 200624334, 799981580, 85821045, 288228070, 2147483648, 84635587, 1, 77778281, 56218055, 1431024020, 716459628]
+    ]
+  }
+]
