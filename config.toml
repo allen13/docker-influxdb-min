@@ -63,6 +63,9 @@ dir = "/data/influxdb/development/db"
 # will be replayed from the WAL
 write-buffer-size = 10000
 
+# The server will check this often for shards that have expired and should be cleared.
+retention-sweep-period = "10m"
+
 [cluster]
 # A comma separated list of servers to seed
 # this server. this is only relevant when the
@@ -114,7 +117,7 @@ lru-cache-size = "200m"
 
 # The default setting on this is 0, which means unlimited. Set this to something if you want to
 # limit the max number of open files. max-open-files is per shard so this * that will be max.
-max-open-shards = 0
+max-open-shards = 5
 
 # The default setting is 100. This option tells how many points will be fetched from LevelDb before
 # they get flushed into backend.
