@@ -11,11 +11,11 @@ RUN echo 'deb http://http.debian.net/debian wheezy-backports main' >> /etc/apt/s
        rpm build-essential git wget gawk \
     && curl -sSL https://get.docker.io/ | sh
 
-#checkout InfluxDB version 0.8.6
+#checkout InfluxDB version 0.8.8
 RUN mkdir -p $GOPATH/src/github.com/influxdb && \
  cd $GOPATH/src/github.com/influxdb && \
  git clone https://github.com/influxdb/influxdb.git && \
- cd influxdb && git checkout tags/v0.8.6
+ cd influxdb && git checkout tags/v0.8.8
 
 WORKDIR $GOPATH/src/github.com/influxdb/influxdb
 
