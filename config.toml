@@ -114,7 +114,7 @@ lru-cache-size = "200m"
 
 # The default setting on this is 0, which means unlimited. Set this to something if you want to
 # limit the max number of open files. max-open-files is per shard so this * that will be max.
-max-open-shards = 0
+max-open-shards = 20
 
 # The default setting is 100. This option tells how many points will be fetched from LevelDb before
 # they get flushed into backend.
