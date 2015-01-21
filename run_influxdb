@@ -2,9 +2,6 @@
 
 CONFIG_FILE="/etc/influxdb/config.toml"
 
-#Dynamically change the value of 'max-open-shards' to what 'ulimit -n' returns
-sed -i "s/^max-open-shards.*/max-open-shards = $(ulimit -n)/g" ${CONFIG_FILE}
-
 #Configure InfluxDB Cluster
 if [ -n "${HOSTNAME}" ]; then
 	if [ "${HOSTNAME}" == "auto" ]; then
@@ -26,4 +23,4 @@ fi
 
 echo "=> Starting InfluxDB ..."
 
-exec /usr/bin/influxdb -config=/etc/influxdb/config.toml
+exec /usr/bin/influxdb -config=/etc/influxdb/config.toml -stdout

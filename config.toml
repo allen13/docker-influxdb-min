@@ -17,7 +17,7 @@ reporting-disabled = false
 
 [logging]
 # logging level can be one of "debug", "info", "warn" or "error"
-level  = "info"
+level  = "warn"
 file   = "/data/influxdb/influxdb.log"         # stdout to log to standard out
 
 # Configure the admin server
@@ -62,6 +62,9 @@ dir = "/data/influxdb/development/db"
 # will still be logged and once the local storage has caught up (or compacted) the writes
 # will be replayed from the WAL
 write-buffer-size = 10000
+
+# The server will check this often for shards that have expired and should be cleared.
+retention-sweep-period = "10m"
 
 [cluster]
 # A comma separated list of servers to seed
