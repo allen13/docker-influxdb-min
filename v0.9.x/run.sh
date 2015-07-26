@@ -26,14 +26,6 @@ if [ -n "${REPLI_FACTOR}" ]; then
     /usr/bin/perl -p -i -e "s/replication = 1/replication = ${REPLI_FACTOR}/g" ${CONFIG_FILE}
 fi
 
-if [ "${SSL_CERT}" == "**None**" ]; then
-    unset SSL_CERT
-fi
-
-if [ "${SSL_SUPPORT}" == "**False**" ]; then
-    unset SSL_SUPPORT
-fi
-
 echo "=> Starting InfluxDB ..."
 
 exec /opt/influxdb/influxd -config=${CONFIG_FILE}
